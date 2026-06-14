@@ -1,6 +1,6 @@
 name: Retrain Model
 
-on:
+"on":
   workflow_dispatch:
 
 permissions:

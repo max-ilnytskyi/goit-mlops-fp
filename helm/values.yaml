@@ -1,0 +1,28 @@
+replicaCount: 1
+
+image:
+  repository: goit-mlops-fp
+  tag: local
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8000
+  targetPort: 8000
+
+env:
+  MODEL_PATH: /app/model/model.pkl
+  DRIFT_THRESHOLD: "5.0"
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 256Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+serviceMonitor:
+  enabled: true
+  interval: 15s
+  scrapeTimeout: 10s

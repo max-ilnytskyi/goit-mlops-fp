@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: goit-mlops-fp
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/max-ilnytskyi/goit-mlops-fp.git
+    targetRevision: final-project
+    path: helm
+
+    helm:
+      valueFiles:
+        - values.yaml
+        - values-ghcr.yaml
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

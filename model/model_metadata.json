@@ -1,0 +1,6 @@
+{
+  "model_type": "RandomForestClassifier",
+  "n_features": 4,
+  "accuracy": 0.95,
+  "random_state": 42
+}

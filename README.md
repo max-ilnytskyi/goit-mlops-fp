@@ -520,7 +520,7 @@ The workflow:
 Image location:
 
 ```text
-ghcr.io/<github-username>/goit-mlops-fp
+ghcr.io/max-ilnytskyi/goit-mlops-fp
 ```
 
 For local ArgoCD deployment with GHCR, the GHCR package should be public.
